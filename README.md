@@ -11,7 +11,7 @@ A simple and naive approach towards calculating moving window statistics could b
 
 To calculate the different moving window statistics fast we use a **one-pass** approach where we go through each data point only once, getting rid of all redundant operations.  
 
-The formulas used for calculating the statistical values and the proofs for the formulas are explained in the pdf document [Moving-Window-Statistics](Miscellaneous/Moving_Window_Statistics_Explanations.pdf) provided.
+The formulas used for calculating the statistical values and the proofs for the formulas are explained in the pdf document [Moving_Window_Statistics_Explanations.pdf](Miscellaneous/Moving_Window_Statistics_Explanations.pdf) provided.
 
 ## Performance Comparison
 The speed gains, as measured by the ratio of time taken by the naive approach and the moving statistic functions are quite astonishing![^1].
