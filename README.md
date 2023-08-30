@@ -13,6 +13,20 @@ To calculate the different moving window statistics fast we use a **one-pass** a
 
 The formulas used for calculating the statistical values and the proofs for the formulas are explained in the pdf document [Moving-Window-Statistics](Miscellaneous/Moving_Window_Statistics_Explanations.pdf) provided.
 
+## Performance Comparison
+The speed gains, as measured by the ratio of time taken by the naive approach and the moving statistic functions quite astonishing![^1].
+|Statistic|Speed Gain|
+|---------|----------|
+|Mean|82x|
+|RMS|80x|
+|Variance|55x|
+|Skewness|400x|
+|Kurtosis|310x|
+
+These tests can be performed by running the [Performance_Comparison.m](Performance_Comparison/Performance_Comparison.m) file provided.
+
+[^1]: The speed gains are approximate. Also, they depend on the length of the time series. Current results are for a length of 100,000.
+
 ## References
 [Wikipedia: Algorithms for calculating variance](https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance)
 

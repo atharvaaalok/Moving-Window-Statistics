@@ -10,7 +10,7 @@ comparison_type = 'MovingWindow';
 
 % Choose one statistic to compare from the below list
 % ['Mean', 'RMS', 'Variance', 'Skewness', 'Kurtosis', 'Autocorrelation'];
-statistic_name = 'RMS';
+statistic_name = 'Kurtosis';
 
 
 %% What we can vary
