@@ -4,7 +4,7 @@ This is a toolbox for calculating moving window statistics such as mean, varianc
 
 Get started with the [Example.m](Example.m) file.
 
-Released on MATLAB FileExchange[![View Moving Window Statistics on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://in.mathworks.com/matlabcentral/fileexchange/134476-moving-window-statistics).
+Released on MATLAB FileExchange [![View Moving Window Statistics on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://in.mathworks.com/matlabcentral/fileexchange/134476-moving-window-statistics).
 
 ## Introduction
 A simple and naive approach towards calculating moving window statistics could be to move the window over the data and for each window calculate the moving window statistic using in-built functions (such as `var`, `skewness` etc. in MATLAB). But this approach is very slow as it involves a lot of redundant calculations. For example, consider the case of finding the moving variance. Using this naive approach, for each window one would have to square all the data points towards calculation of the variance. Now since the windows will have a good amount of overlap the same data point which is common amongst several windows will be squared repeatedly, leading to redundant calculations which slow down the process.  
