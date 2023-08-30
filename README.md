@@ -14,7 +14,7 @@ To calculate the different moving window statistics fast we use a **one-pass** a
 The formulas used for calculating the statistical values and the proofs for the formulas are explained in the pdf document [Moving-Window-Statistics](Miscellaneous/Moving_Window_Statistics_Explanations.pdf) provided.
 
 ## Performance Comparison
-The speed gains, as measured by the ratio of time taken by the naive approach and the moving statistic functions quite astonishing![^1].
+The speed gains, as measured by the ratio of time taken by the naive approach and the moving statistic functions are quite astonishing![^1].
 |Statistic|Speed Gain|
 |---------|----------|
 |Mean|82x|
