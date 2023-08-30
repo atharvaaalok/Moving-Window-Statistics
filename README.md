@@ -17,9 +17,9 @@ The formulas used for calculating the statistical values and the proofs for the 
 The speed gains, as measured by the ratio of time taken by the naive approach and the moving statistic functions are quite astonishing![^1].
 |Statistic|Speed Gain|
 |---------|----------|
-|Mean|82x|
-|RMS|80x|
-|Variance|55x|
+|Mean|108x|
+|RMS|151x|
+|Variance|71x|
 |Skewness|400x|
 |Kurtosis|310x|
 
@@ -28,7 +28,8 @@ These tests can be performed by running the [Performance_Comparison.m](Performan
 [^1]: The speed gains are approximate. Also, they depend on the length of the time series. Current results are for a length of 100,000.
 
 ## References
-[Wikipedia: Algorithms for calculating variance](https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance)
+[Wikipedia: Algorithms for calculating variance](https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance)  
+[MATLAB Answers: Optimizing for speed. Moving skewness finder. Cumulative sum proving to be bottleneck.](https://in.mathworks.com/matlabcentral/answers/2013192-optimizing-for-speed-moving-skewness-finder-cumulative-sum-proving-to-be-bottleneck#answer_1294112)
 
 ##
 > [!NOTE]
