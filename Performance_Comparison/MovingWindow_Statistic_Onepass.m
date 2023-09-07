@@ -1,4 +1,4 @@
-function statistic_timeseries = MovingWindow_Statistic_Onepass(x, window_size, window_step, statistic_name, comparison_type)
+function statistic_timeseries = MovingWindow_Statistic_Onepass(x, window_size, window_step, statistic_name, comparison_type, autocorr_lag)
 
     % This is the one pass implementation which calculates the statistic with a single pass over the data
     % This is faster as it gets rid of repetative calculations
@@ -16,7 +16,7 @@ function statistic_timeseries = MovingWindow_Statistic_Onepass(x, window_size, w
             case 'Kurtosis'
                 statistic_timeseries = moving_kurtosis(x, window_size, window_step);
             case 'Autocorrelation'
-                statistic_timeseries = moving_autocorr_lag1(x, window_size, window_step);
+                statistic_timeseries = moving_autocorr(x, window_size, window_step, autocorr_lag);
             otherwise
                 warning('Invalid Statistic. Check name again.');
                 exit();
@@ -35,7 +35,7 @@ function statistic_timeseries = MovingWindow_Statistic_Onepass(x, window_size, w
             case 'Kurtosis'
                 statistic_timeseries = kurtosis_onepass(x);
             case 'Autocorrelation'
-                statistic_timeseries = autocorr_lag1_onepass(x);
+                statistic_timeseries = autocorr_onepass(x, autocorr_lag);
             otherwise
                 warning('Invalid Statistic. Check name again.');
                 exit();

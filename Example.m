@@ -26,11 +26,15 @@ mean_timeseries = moving_mean(timeseries, window_size, window_step);
 % Calculate moving skewness
 sk_timeseries = moving_skewness(timeseries, window_size, window_step);
 
+% Calculate moving autocorrelation at specific lag
+autocorr_lag = 1;
+ac_timeseries = moving_autocorr(timeseries, window_size, window_step, autocorr_lag);
+
 
 %% Plot the moving window statistics
 
 figure();
-tiledlayout(3, 1);
+tiledlayout(4, 1);
 nexttile;
 plot(time, timeseries);
 ylabel('Time series');
@@ -43,5 +47,10 @@ nexttile;
 plot(time_stat, sk_timeseries);
 xlim([time(1), time(end)]);
 ylabel('Skewness')
+xlabel('Time');
+nexttile;
+plot(time_stat, ac_timeseries);
+xlim([time(1), time(end)]);
+ylabel('Autocorrelation')
 xlabel('Time');
 

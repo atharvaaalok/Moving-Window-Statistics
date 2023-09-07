@@ -1,4 +1,4 @@
-function statistic_timeseries = MovingWindow_Statistic_Naive(x, window_size, window_step, statistic_name, comparison_type)
+function statistic_timeseries = MovingWindow_Statistic_Naive(x, window_size, window_step, statistic_name, comparison_type, autocorr_lag)
 
     % This is the naive implementation which calculates the statistic as follows:
     % 1) Loops over the data moving the window using the step size
@@ -42,7 +42,7 @@ function statistic_timeseries = MovingWindow_Statistic_Naive(x, window_size, win
                 end
             case 'Autocorrelation'
                 for i = 1: length(window_idx)
-                    AC_lag = 1;
+                    AC_lag = autocorr_lag;
                     acf = autocorr(timeseries_window_data{i}, NumLags = AC_lag);
                     statistic_timeseries(i) = acf(AC_lag + 1);
                 end
@@ -60,11 +60,11 @@ function statistic_timeseries = MovingWindow_Statistic_Naive(x, window_size, win
             case 'Variance'
                 statistic_timeseries = var(x);
             case 'Skewness'
-                statistic_timeseries = skewnes(x);
+                statistic_timeseries = skewness(x);
             case 'Kurtosis'
                 statistic_timeseries = kurtosis(x);
             case 'Autocorrelation'
-                AC_lag = 1;
+                AC_lag = autocorr_lag;
                 acf = autocorr(x, NumLags = AC_lag);
                 statistic_timeseries = acf(AC_lag + 1);
             otherwise

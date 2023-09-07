@@ -10,7 +10,10 @@ comparison_type = 'MovingWindow';
 
 % Choose one statistic to compare from the below list
 % ['Mean', 'RMS', 'Variance', 'Skewness', 'Kurtosis', 'Autocorrelation'];
-statistic_name = 'Kurtosis';
+statistic_name = 'Autocorrelation';
+
+% Choose the lag for autocorrelation. If the statistic chosen is not autocorrelation, then this will be unused
+autocorr_lag = 10;
 
 
 %% What we can vary
@@ -21,7 +24,7 @@ window_size = floor(N * 0.05);
 overlap_ratio = 99 / 100;
 window_step = floor(window_size * (1 - overlap_ratio));
 
-total_avg_count = 100;
+total_avg_count = 1;
 
 
 %% Compare the values and the time taken for generating statistical quantities
@@ -35,12 +38,12 @@ for i = 1: total_avg_count
 
     % Calculate statistic using naive method and using in-built functions
     tic_naive = tic;
-    stat_naive = MovingWindow_Statistic_Naive(timeseries, window_size, window_step, statistic_name, comparison_type);
+    stat_naive = MovingWindow_Statistic_Naive(timeseries, window_size, window_step, statistic_name, comparison_type, autocorr_lag);
     time_naive = time_naive + toc(tic_naive);
     
     % Calculate statistic using one-pass functions
     tic_onepass = tic;
-    stat_onepass = MovingWindow_Statistic_Onepass(timeseries, window_size, window_step, statistic_name, comparison_type);
+    stat_onepass = MovingWindow_Statistic_Onepass(timeseries, window_size, window_step, statistic_name, comparison_type, autocorr_lag);
     time_onepass = time_onepass + toc(tic_onepass);
 
 end

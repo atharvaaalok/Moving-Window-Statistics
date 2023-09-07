@@ -22,6 +22,7 @@ The speed gains, as measured by the ratio of time taken by the naive approach an
 |Variance|71x|
 |Skewness|400x|
 |Kurtosis|310x|
+|Autocorrelation|765x|
 
 These tests can be performed by running the [Performance_Comparison.m](Performance_Comparison/Performance_Comparison.m) file provided.
 
